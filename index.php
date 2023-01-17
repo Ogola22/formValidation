@@ -6,9 +6,8 @@
         <title>Form validation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel ="stylesheet" href ="styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+        <link href ="styles.css" rel ="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-light">
@@ -32,7 +31,7 @@
             </div>
             </div>
         </nav>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 25rem;">
             <img src="./images/me55.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Form Validation project using PHP.</h5>
