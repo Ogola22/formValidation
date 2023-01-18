@@ -10,6 +10,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
         <?php
+        //checking for firstname validation
+        if(empty($_POST['firstname'];)){
+            $errors['firstname'] = 'First name cannot be empty'<br>;
+        }else{
+            $firstname = $_POST['firstname'];
+            if(!preg_match('/^[a-zA-Z\s]+$/',$firstname)){
+                $errors['firstname']='First name must be letters and spaces only';
+            }
+        }
     </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -35,27 +44,27 @@
     </nav>
     <form>
         <div class="row mb-3">
-            <label for="inputFirstname" class="col-sm-2 col-form-label">First name</label>
+            <label for="firstname" class="col-sm-2 col-form-label">First name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputFirstname">
+                <input type="text" class="form-control" id="firstname">
             </div>
         </div>
         <div class="row mb-3">
-            <label for="inputLastname" class="col-sm-2 col-form-label">Last name</label>
+            <label for="lastname" class="col-sm-2 col-form-label">Last name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputFirstname">
+                <input type="text" class="form-control" id="lastname">
             </div>
         </div>
         <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="email">
             </div>
         </div>
         <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3">
+                <input type="password" class="form-control" id="password">
             </div>
         </div>
        <button type="submit" class="btn btn-primary">Sign in</button>
