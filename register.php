@@ -10,13 +10,42 @@
 
         <link rel ="stylesheet" href ="styles.css">
         <?php
-        //checking for firstname validation
-        if(empty($_POST['firstname'])){
-            $errors['firstname'] = 'First name cannot be empty <br>';
-        }else{
+        $firstname=$lastname=$email=$course;
+        $errors = arrays('firstname'=>'','lastname'=>'','email'=>'','course'=>'');
+        if(isset($_POST['submit'])){
+            //checking for firstname validation
+            if(empty($_POST['firstname'])){
+                $errors['firstname'] = 'First name cannot be empty <br>';
+            }else{
             $firstname = $_POST['firstname'];
-            if(!preg_match('/^[a-zA-Z\s]+$/',$firstname)){
-                $errors['firstname']='First name must be letters and spaces only';
+                if(!preg_match('/^[a-zA-Z\s]+$/',$firstname)){
+                    $errors['firstname']='First name must be letters and spaces only';
+                }
+            }
+            //checking for lastname validation
+            if(empty($_POST['lastname'])){
+                $errors['lastname'] = 'Last name cannot be empty <br>';
+            }else{
+            $firstname = $_POST['lastname'];
+                if(!preg_match('/^[a-zA-Z\s]+$/',$firstname)){
+                    $errors['lastname']='Last name must be letters and spaces only';
+                }
+            }
+            if(empty($_POST['email'])){
+                $errors['email'] = 'Email name cannot be empty <br>';
+            }else{
+            $firstname = $_POST['email'];
+                if(!preg_match('/^[a-zA-Z\s]+$/',$password)){
+                    $errors['email']='Email must be letters';
+                }
+            }
+            if(empty($_POST['password'])){
+                $errors['password'] = 'Paswword cannot be empty <br>';
+            }else{
+            $firstname = $_POST['password'];
+                if(!preg_match('/^[a-zA-Z\s]+$/',$password)){
+                    $errors['password']='Password must be letters and spaces only';
+                }
             }
         }
         ?>
@@ -48,7 +77,9 @@
         <div class="row mb-3">
             <label for="firstname" class="col-sm-2 col-form-label">First name</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="firstname">
+                <input type="text" class="form-control" id="firstname"
+                value="?php echo htmlspecialchars($firstname);?>">
+                <div class="text-danger"><? echo $errors['firstname'];?></div>
             </div>
         </div>
         <div class="row mb-3">
